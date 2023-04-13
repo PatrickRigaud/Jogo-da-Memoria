@@ -62,8 +62,16 @@ let posicoesCartas = [document.getElementById('position1'),
                     document.getElementById('position11'),
                     document.getElementById('position12'),]
 
+function iniciarJogoVirarCoringas(){
+    for(let item of posicoesCartas){
+        item.setAttribute("src", "./img/coringa.png")
+    }
+}
+
 
 function embaralharCartas(){
+    iniciarJogoVirarCoringas()
+
     let contadorCarta = 1
     let contadorPosicao = 1
     for(let i = 0; i < 6; i++){
@@ -145,6 +153,6 @@ function validarCarta(){
                     cartas[item].cartaPosicao2.setAttribute("src", "./img/coringa.png")
                 }
             }
-        }, 1000) 
+        }, 1500) 
     } 
 }

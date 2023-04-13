@@ -120,11 +120,10 @@ function adicionarCarta(item){
     cartas.escolhidas.carta1 = cartas[item].cartaNumero
     }else{
         cartas.escolhidas.carta2 = cartas[item].cartaNumero
-
-        validarCarta()
-        }
-          
         
+        validarCarta()
+          
+    }
 }
 
 function validarCarta(){
@@ -137,27 +136,15 @@ function validarCarta(){
         cartas.escolhidas.carta1 = 0
         cartas.escolhidas.carta2 = 0
         
-        for(let item in cartas){
+
+        setTimeout(()=>{
+            for(let item in cartas){
             
-            if(cartas[item].virada == false){
-                cartas[item].cartaPosicao1.setAttribute("src", "./img/coringa.png")
-                cartas[item].cartaPosicao2.setAttribute("src", "./img/coringa.png")
+                if(cartas[item].virada == false){
+                    cartas[item].cartaPosicao1.setAttribute("src", "./img/coringa.png")
+                    cartas[item].cartaPosicao2.setAttribute("src", "./img/coringa.png")
+                }
             }
-        }
-       
-    }
-
-
-    
-}
-
-
-
-function esperarTempo(){
-    const start = new Date().getTime();
-    let currentTime = start;
-    
-    while (currentTime - start < 500) {
-      currentTime = new Date().getTime();
-    }
+        }, 1000) 
+    } 
 }
